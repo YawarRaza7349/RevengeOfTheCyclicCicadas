@@ -3,6 +3,7 @@
 #include <fstream>
 #include <map>
 #include <iostream>
+#include "json_writer.h"
 
 template<int Dimension, typename T, char Lower, char Upper>
 class table {
@@ -80,7 +81,7 @@ int main() {
             
             auto& data_for_state = data_by_state[lookup_table[state_code.begin()]];
             
-            auto cycle = lookup_table[cycle_code.begin()];
+            auto const& cycle = lookup_table[cycle_code.begin()];
             
             try {
                 auto years_before_cutoff = 2012 - std::stoi(lookup_table[year_code.begin()]);
@@ -95,4 +96,37 @@ int main() {
             }
         }
     } // close data_file
+    
+    json_writer jw(std::cout);
+    
+    jw.begin_array();
+    
+    for (auto const& [name, data] : data_by_state) {
+        jw.array_element();
+        
+        jw.begin_object();
+        
+        jw.object_field("state");
+        jw.string(name);
+        
+        jw.object_field("back13");
+        jw.begin_array();
+        for (auto datum : data.back13) {
+            jw.array_element();
+            jw.integer(datum);
+        }
+        jw.end_array();
+        
+        jw.object_field("back17");
+        jw.begin_array();
+        for (auto datum : data.back17) {
+            jw.array_element();
+            jw.integer(datum);
+        }
+        jw.end_array();
+        
+        jw.end_object();
+    }
+    
+    jw.end_array();
 }
