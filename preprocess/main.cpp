@@ -47,7 +47,7 @@ public:
 };
 
 int main() {
-    auto const code_length = 2;
+    auto constexpr code_length = 2;
     
     // trade space efficiency for time efficiency by
     // not removing the gap between digits and letters
@@ -79,17 +79,17 @@ int main() {
                 >> state_code
                 >> discard;
             
-            auto& data_for_state = data_by_state[lookup_table[state_code.begin()]];
-            
             auto const& cycle = lookup_table[cycle_code.begin()];
+            auto const& year = lookup_table[year_code.begin()];
+            auto const& state = lookup_table[state_code.begin()];
             
             try {
-                auto years_before_cutoff = 2012 - std::stoi(lookup_table[year_code.begin()]);
+                auto years_before_cutoff = 2012 - std::stoi(year);
                 
                 if (cycle == "13" && years_before_cutoff < 13) {
-                    ++data_for_state.back13.at(years_before_cutoff);
+                    ++data_by_state[state].back13.at(years_before_cutoff);
                 } else if (cycle == "17" && years_before_cutoff < 17) {
-                    ++data_for_state.back17.at(years_before_cutoff);
+                    ++data_by_state[state].back17.at(years_before_cutoff);
                 }
             } catch (...) {
                 // ignore data with invalid year
@@ -99,6 +99,12 @@ int main() {
     
     json_writer jw(std::cout);
     
+    jw.begin_object();
+    
+    jw.object_field("startYear");
+    jw.integer(2013);
+    
+    jw.object_field("data");
     jw.begin_array();
     
     for (auto const& [name, data] : data_by_state) {
@@ -109,19 +115,27 @@ int main() {
         jw.object_field("state");
         jw.string(name);
         
-        jw.object_field("back13");
+        jw.object_field("cycle13");
         jw.begin_array();
-        for (auto datum : data.back13) {
+        for (
+            auto iter(data.back13.rbegin());
+            iter != data.back13.rend();
+            ++iter
+        ) {
             jw.array_element();
-            jw.integer(datum);
+            jw.integer(*iter);
         }
         jw.end_array();
         
-        jw.object_field("back17");
+        jw.object_field("cycle17");
         jw.begin_array();
-        for (auto datum : data.back17) {
+        for (
+            auto iter(data.back17.rbegin());
+            iter != data.back17.rend();
+            ++iter
+        ) {
             jw.array_element();
-            jw.integer(datum);
+            jw.integer(*iter);
         }
         jw.end_array();
         
@@ -129,4 +143,6 @@ int main() {
     }
     
     jw.end_array();
+    
+    jw.end_object();
 }
