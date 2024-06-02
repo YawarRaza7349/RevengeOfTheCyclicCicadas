@@ -1,0 +1,22 @@
+#header {
+  font-size: 2rem;
+  text-align: center;
+}
+
+#year {
+  color: green;
+  font-weight: bold;
+}
+
+#edit-year {
+  display: inline flex;
+  vertical-align: top;
+  flex-direction: column;
+  font-size: 1rem;
+  align-items: center;
+}
+
+.state {
+  fill: white;
+  stroke: black;
+}
