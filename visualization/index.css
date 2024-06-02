@@ -1,19 +1,46 @@
+body {
+  font-family: monospace;
+  font-size: 1rem;
+}
+
+button, input {
+  font: inherit;
+}
+
 #header {
   font-size: 2rem;
   text-align: center;
 }
 
 #year {
-  color: green;
+  color: brown;
   font-weight: bold;
+  font-size: 2.5rem;
 }
 
-#edit-year {
-  display: inline flex;
-  vertical-align: top;
-  flex-direction: column;
+#edit-year, #submit-year {
+  display: inline;
   font-size: 1rem;
+  vertical-align: top;
   align-items: center;
+  margin-left: 1rex;
+}
+
+#year-textbox {
+  font-size: 2rem;
+  width: 5ex;
+}
+
+#controls {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#slider {
+  flex-grow: 1;
+  margin-left: 1ex;
+  margin-right: 1ex;
 }
 
 .state {
