@@ -7,6 +7,21 @@ button, input {
   font: inherit;
 }
 
+@media (min-width: 9in) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  #sidebar {
+    width: 6in;
+  }
+  
+  #map {
+    flex-grow: 1;
+  }
+}
+
 #header {
   font-size: 2rem;
   text-align: center;
@@ -43,7 +58,35 @@ button, input {
   margin-right: 1ex;
 }
 
-.state {
+#data {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#data div {
+  width: 15ex;
+}
+
+#data dt {
+  float: left;
+  clear: left;
+  font-weight: bold;
+}
+
+#data dt::after {
+  content: ": ";
+  white-space: pre;
+}
+
+#data dd {
+  margin-left: 0;
+}
+
+#map .state {
   fill: white;
   stroke: black;
+}
+
+#map svg {
+  width: 100%;
 }
