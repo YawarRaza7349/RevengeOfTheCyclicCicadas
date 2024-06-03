@@ -6,23 +6,32 @@
     <link rel="stylesheet" href="index.css"/>
   </head>
   <body>
-    <div id="header">
-      Distribution of cicadas estimated for year
-      <span id="year-widget" role="region" aria-live="polite">
-        <span id="year-widget-dormant">
-          <span id="year">2024</span><button type="button" id="edit-year">Edit<br/>Year</button>
+    <div id="sidebar">
+      <div id="header">
+        Estimated U.S. distribution of cicadas for year
+        <span id="year-widget" role="region" aria-live="polite">
+          <span id="year-widget-dormant">
+            <span id="year">2024</span><button type="button" id="edit-year">Edit<br/>Year</button>
+          </span>
+          <span id="year-widget-active" hidden="">
+            <input type="text" id="year-textbox"/><button type="button" id="submit-year">Submit<br/>Year</button>
+          </span>
         </span>
-        <span id="year-widget-active" hidden="">
-          <input type="text" id="year-textbox"/><button type="button" id="submit-year">Submit<br/>Year</button>
-        </span>
-      </span>
+      </div>
+      <hr/>
+      <div id="controls">
+        <label for="slider">Slide to year</label>
+        <input type="range" max="220" id="slider"/>
+        <button type="button" id="animate">Animate</button>
+      </div>
+      <hr/>
+      <dl id="data" role="region" aria-live="polite">
+      </dl>
     </div>
-    <hr/>
-    <div id="controls">
-      <label for="slider">Slide to year</label>
-      <input type="range" max="220" id="slider"/>
-      <button type="button" id="animate">Animate</button>
+    <div id="map">
+      <svg viewBox="0 0 959 593" aria-details="data">
+        <title>A map of the U.S. that visualizes the data</title>
+      </svg>
     </div>
-    <hr/>
   </body>
 </html>
