@@ -46,6 +46,15 @@ button, input {
   width: 5ex;
 }
 
+#year-textbox:valid {
+  color: green;
+}
+
+#year-textbox:invalid {
+  color: red;
+  font-style: oblique;
+}
+
 #controls {
   width: 100%;
   display: flex;
@@ -56,6 +65,10 @@ button, input {
   flex-grow: 1;
   margin-left: 1ex;
   margin-right: 1ex;
+}
+
+#animate, #pause {
+  width: 10ex;
 }
 
 #data {
