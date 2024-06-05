@@ -7,14 +7,14 @@ button, input {
   font: inherit;
 }
 
-@media (min-width: 9in) {
+@media (min-width: 8in) {
   body {
     display: flex;
     flex-direction: row;
   }
   
   #sidebar {
-    width: 6in;
+    width: 4in;
   }
   
   #map {
