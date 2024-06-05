@@ -8,9 +8,17 @@ button, input {
 }
 
 @media (min-width: 9in) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+
   #sidebar {
-    float: left;
     width: 4.5in;
+  }
+
+  #map {
+    flex-grow: 1;
   }
 }
 
