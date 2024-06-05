@@ -8,18 +8,9 @@ button, input {
 }
 
 @media (min-width: 9in) {
-  body {
-    display: flex;
-    flex-direction: row;
-  }
-  
   #sidebar {
+    float: left;
     width: 4.5in;
-  }
-  
-  #map {
-    flex-grow: 1;
-    max-height: 100%;
   }
 }
 
@@ -96,12 +87,18 @@ button, input {
   margin-left: 0;
 }
 
-#map .state {
-  fill: white;
+#map {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #map svg {
-  width: 100%;
+  width: auto;
+  height: auto;
+}
+
+#map .state {
+  fill: white;
 }
 
 #repo {
