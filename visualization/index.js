@@ -84,12 +84,14 @@ domAnimate.addEventListener("click", () => {
   interval = setInterval(() => {
     ++year.val;
   }, 500);
+  domData.ariaBusy = true;
   domPause.hidden = false;
 });
 
 domPause.addEventListener("click", () => {
   domPause.hidden = true;
   clearInterval(interval);
+  domData.ariaBusy = false;
   domAnimate.hidden = false;
 });
 
