@@ -96,9 +96,13 @@ domPause.addEventListener("click", () => {
   domAnimate.hidden = false;
 });
 
-const svgUrl = "https://raw.githubusercontent.com/YawarRaza7349/CyclicCicadas/master/data/usMap.svg";
+const svgUrl =
+  "https://raw.githubusercontent.com/" +
+  "YawarRaza7349/CyclicCicadas/master/data/usMap.svg";
 const svgText = await (await fetch(svgUrl)).text();
-const svgContents = new DOMParser().parseFromString(svgText, "image/svg+xml").documentElement.childNodes;
+const svgContents =
+  new DOMParser().parseFromString(svgText, "image/svg+xml")
+    .documentElement.childNodes;
 domMapSvg.append(...svgContents);
 
 const fragment = document.createDocumentFragment();
@@ -124,11 +128,16 @@ for (const path of document.querySelectorAll("#map path")) {
 year.subscribe((y) => {
   for (const { state, cycle13, cycle17, textNode, dlItem, svg } of allData) {
     const deltaYear = y - dataStartYear;
-    const total = cycle13[positiveModulo(deltaYear, 13)] + cycle17[positiveModulo(deltaYear, 17)];
+    const total =
+      cycle13[positiveModulo(deltaYear, 13)] +
+      cycle17[positiveModulo(deltaYear, 17)];
     textNode.nodeValue = total;
     dlItem.ariaHidden = total === 0 ? "true" : "false";
     const colorValue = Math.log1p(total) * 26;
-    svg.style.fill = "rgb(255 " + Math.trunc(255 - colorValue / 2) + " " + Math.trunc(255 - colorValue) + ")";
+    svg.style.fill =
+      "rgb(255 " +
+      Math.trunc(255 - colorValue / 2) + " " +
+      Math.trunc(255 - colorValue) + ")";
   }
 });
 
