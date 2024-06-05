@@ -36,7 +36,7 @@ const domData = document.querySelector("#data");
 const fullCycle = 13 * 17;
 const baselineYear = 2024;
 const initYear = 2024;
-const year = new Observable(initYear);
+const year = new Observable();
 
 year.subscribe((y) => {
   domYear.innerText = y;
