@@ -97,7 +97,6 @@ button, input {
 
 #map .state {
   fill: white;
-  stroke: black;
 }
 
 #map svg {
