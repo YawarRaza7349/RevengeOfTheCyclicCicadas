@@ -22,8 +22,6 @@ class Observable {
 
 const { startYear: dataStartYear, data: allData } = preprocessed;
 
-
-
 const domEditYear = document.querySelector("#edit-year");
 const domSubmitYear = document.querySelector("#submit-year");
 const domYearWidgetDormant = document.querySelector("#year-widget-dormant");
