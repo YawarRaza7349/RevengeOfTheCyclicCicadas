@@ -1,4 +1,4 @@
-import { preprocessed } from "preprocessed";
+import { preprocessed } from "./preprocessed.js";
 
 class Observable {
   #v;
