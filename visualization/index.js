@@ -109,6 +109,10 @@ for (const stateData of allData) {
 
 domData.append(fragment);
 
+for (const path of document.querySelectorAll("#map path")) {
+  path.style.stroke = "black";
+}
+
 year.subscribe((y) => {
   for (const { state, cycle13, cycle17, textNode, dlItem, svg } of allData) {
     const deltaYear = y - dataStartYear;
