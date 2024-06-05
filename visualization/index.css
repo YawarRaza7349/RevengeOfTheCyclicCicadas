@@ -102,3 +102,7 @@ button, input {
 #map svg {
   width: 100%;
 }
+
+#repo {
+  text-align: center;
+}
