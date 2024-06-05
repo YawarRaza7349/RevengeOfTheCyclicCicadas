@@ -20,7 +20,7 @@ class Observable {
   }
 }
 
-const { startYear: dataStartYear, data: allData } = preprocessed;
+const { startYear: dataStartYear, data: allData } = window.preprocessedData;
 
 const domEditYear = document.querySelector("#edit-year");
 const domSubmitYear = document.querySelector("#submit-year");
