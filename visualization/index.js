@@ -32,6 +32,7 @@ const domSlider = document.querySelector("#slider");
 const domAnimate = document.querySelector("#animate");
 const domPause = document.querySelector("#pause");
 const domData = document.querySelector("#data");
+const domMapSvg = document.querySelector("#map svg");
 
 const fullCycle = 13 * 17;
 const baselineYear = 2024;
@@ -94,6 +95,11 @@ domPause.addEventListener("click", () => {
   domData.ariaBusy = false;
   domAnimate.hidden = false;
 });
+
+const svgUrl = "https://raw.githubusercontent.com/YawarRaza7349/CyclicCicadas/master/data/usMap.svg";
+const svgText = await (await fetch(svgUrl)).text();
+const svgContents = new DOMParser().parseFromString(svgText, "image/svg+xml").documentElement.childNodes;
+domMapSvg.append(...svgContents);
 
 const fragment = document.createDocumentFragment();
 
