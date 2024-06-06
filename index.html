@@ -9,25 +9,27 @@
   </head>
   <body>
     <div id="sidebar">
-      <div id="header">
+      <h1>
         Cicadas in U.S. states projected for year
-        <span id="year-widget" role="region" aria-live="polite">
-          <span id="year-widget-dormant">
-            <span id="year">2024</span><button type="button" id="edit-year">Edit<br/>Year</button>
-          </span>
-          <span id="year-widget-active" hidden="">
-            <input type="number" required="" value="2024" id="year-textbox"/><button type="button" id="submit-year">Submit<br/>Year</button>
-          </span>
-        </span>
+        <span role="region" aria-live="polite" id="year">2024</span>
+      </h1>
+      <hr/>
+      <div id="jump-controls">
+        <div>
+          <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas">GitHub repo</a>
+        </div>
+        <div>
+          <label for="year-textbox">Jump to year</label>label>
+          <input type="number" required="" value="2024" id="year-textbox"/>
+          <button type="button" id="submit-year">Submit</button>
+        </div>
       </div>
       <hr/>
-      <div id="controls">
+      <div id="slide-controls">
         <label for="slider">Slide to year</label>
         <input type="range" max="220" value="0" id="slider"/>
-        <span role="region" aria-live="polite">
-          <button type="button" id="animate">Animate</button>
-          <button type="button" id="pause" hidden="">Pause</button>
-        </span>
+        <label for="animate">Animate</label>
+        <input type="checkbox" id="animate"/>
       </div>
       <hr/>
       <dl id="data" role="region" aria-live="polite" aria-atomic="true">
@@ -37,9 +39,6 @@
       <svg viewBox="0 0 959 593" aria-details="data">
         <title>A map of the U.S. that visualizes the data</title>
       </svg>
-      <div id="repo">
-        <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas">GitHub repo</a>
-      </div>
     </div>
   </body>
 </html>
