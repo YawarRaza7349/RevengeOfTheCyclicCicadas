@@ -22,15 +22,11 @@ class Observable {
 
 const { startYear: dataStartYear, data: allData } = preprocessed;
 
-const domEditYear = document.querySelector("#edit-year");
 const domSubmitYear = document.querySelector("#submit-year");
-const domYearWidgetDormant = document.querySelector("#year-widget-dormant");
-const domYearWidgetActive = document.querySelector("#year-widget-active");
 const domYearTextbox = document.querySelector("#year-textbox");
 const domYear = document.querySelector("#year");
 const domSlider = document.querySelector("#slider");
 const domAnimate = document.querySelector("#animate");
-const domPause = document.querySelector("#pause");
 const domData = document.querySelector("#data");
 const domMapSvg = document.querySelector("#map svg");
 
@@ -43,22 +39,10 @@ year.subscribe((y) => {
   domYear.innerText = y;
 });
 
-domEditYear.addEventListener("click", () => {
-  domYearWidgetDormant.hidden = true;
-  domYearTextbox.value = year.val;
-  domYearWidgetActive.hidden = false;
-});
-
-domYearTextbox.addEventListener("input", () => {
-  domSubmitYear.disabled = !domYearTextbox.validity.valid;
-});
-
 domSubmitYear.addEventListener("click", () => {
   const parsed = Number.parseInt(domYearTextbox.value);
   if (!Number.isNaN(parsed)) {
-    domYearWidgetActive.hidden = true;
     year.val = parsed;
-    domYearWidgetDormant.hidden = false;
   }
 });
 
@@ -80,20 +64,16 @@ domSlider.addEventListener("input", () => {
 
 let interval;
 
-domAnimate.addEventListener("click", () => {
-  domAnimate.hidden = true;
-  interval = setInterval(() => {
-    ++year.val;
-  }, 500);
-  domData.ariaBusy = true;
-  domPause.hidden = false;
-});
-
-domPause.addEventListener("click", () => {
-  domPause.hidden = true;
-  clearInterval(interval);
-  domData.ariaBusy = false;
-  domAnimate.hidden = false;
+domAnimate.addEventListener("change", () => {
+  if (domAnimate.checked) {
+    interval = setInterval(() => {
+      ++year.val;
+    }, 500);
+    domData.ariaBusy = true;
+  } else {
+    clearInterval(interval);
+    domData.ariaBusy = false;
+  }
 });
 
 const svgUrl =
