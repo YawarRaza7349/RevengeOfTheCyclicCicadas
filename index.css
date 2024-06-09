@@ -31,11 +31,7 @@ h1 {
   height: 10rem;
   display: flex;
   flex-flow: column nowrap;
-  justify-content: center;
-}
-
-#controls > * {
-  flex: 1;
+  justify-content: space-evenly;
 }
 
 label[for="slider"] {
