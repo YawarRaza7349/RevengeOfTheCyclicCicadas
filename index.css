@@ -27,8 +27,22 @@ h1 {
   font-weight: bold;
 }
 
+#slider-controls {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+label[for="slider"] {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#slider {
+  flex-grow: 1;
+}
+
 #jump-controls {
-  width: 100%;
   display: flex;
   flex-flow: row wrap;
 }
@@ -48,22 +62,6 @@ label[for="year-textbox"] {
 #year-textbox:invalid {
   color: red;
   font-style: oblique;
-}
-
-#slider-controls {
-  width: 100%;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-label[for="slider"] {
-  flex-grow: 1;
-  display: flex;
-  flex-flow: row wrap;
-}
-
-#slider {
-  flex-grow: 1;
 }
 
 #data {
@@ -93,7 +91,7 @@ label[for="slider"] {
 
 #map {
   flex-grow: 1;
-  height: 100vh;
+  max-height: 100vh;
 }
 
 #map svg {
