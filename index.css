@@ -27,9 +27,15 @@ h1 {
   font-weight: bold;
 }
 
+#controls {
+  height: 10rem;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+}
+
 #controls > * {
-  height: 5rem;
-  vertical-align: middle;
+  flex: 1;
 }
 
 label[for="slider"] {
@@ -38,7 +44,7 @@ label[for="slider"] {
 }
 
 #slider {
-  flex-grow: 1;
+  flex: auto;
 }
 
 label[for="year-textbox"] {
@@ -47,7 +53,7 @@ label[for="year-textbox"] {
 }
 
 #year-textbox {
-  flex-grow: 1;
+  flex: auto;
 }
 
 #year-textbox:valid {
@@ -89,7 +95,7 @@ label[for="year-textbox"] {
 }
 
 #map {
-  flex-grow: 1;
+  flex: 1;
   max-height: 100vh;
 }
 
