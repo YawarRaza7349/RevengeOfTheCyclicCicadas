@@ -1,26 +1,20 @@
 body {
   font-family: monospace;
   font-size: 1rem;
+  line-height: 1.5;
 }
 
 button, input {
   font: inherit;
 }
 
-@media (min-width: 9in) {
-  body {
-    display: flex;
-    flex-flow: row wrap;
-  }
+body {
+  display: flex;
+  flex-flow: row wrap;
+}
 
-  #sidebar {
-    width: 4.5in;
-  }
-
-  #map {
-    flex-grow: 1;
-    height: 100vh;
-  }
+#sidebar {
+  max-width: 50rex;
 }
 
 h1 {
@@ -79,7 +73,7 @@ label[for="slider"] {
 }
 
 #data div {
-  width: 15ex;
+  width: 15rex;
 }
 
 #data dt {
@@ -95,6 +89,11 @@ label[for="slider"] {
 
 #data dd {
   margin-left: 0;
+}
+
+#map {
+  flex-grow: 1;
+  height: 100vh;
 }
 
 #map svg {
