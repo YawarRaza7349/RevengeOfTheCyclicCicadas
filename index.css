@@ -30,11 +30,11 @@ h1 {
 #controls {
   display: flex;
   flex-flow: column nowrap;
-  align-items: center;
+  justify-content: center;
 }
 
 #controls > * {
-  height: 2rem;
+  height: 5rem;
 }
 
 label[for="slider"] {
