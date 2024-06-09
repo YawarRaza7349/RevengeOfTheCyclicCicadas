@@ -22,9 +22,8 @@ class Observable {
 
 const { startYear: dataStartYear, data: allData } = preprocessed;
 
-const domSubmitYear = document.querySelector("#submit-year");
-const domYearTextbox = document.querySelector("#year-textbox");
 const domYear = document.querySelector("#year");
+const domYearTextbox = document.querySelector("#year-textbox");
 const domSlider = document.querySelector("#slider");
 const domAnimate = document.querySelector("#animate");
 const domData = document.querySelector("#data");
@@ -39,7 +38,7 @@ year.subscribe((y) => {
   domYear.innerText = y;
 });
 
-domSubmitYear.addEventListener("click", () => {
+domYearTextbox.addEventListener("change", () => {
   const parsed = Number.parseInt(domYearTextbox.value);
   if (!Number.isNaN(parsed)) {
     year.val = parsed;
@@ -58,7 +57,7 @@ year.subscribe((y) => {
   sliderBase = y - modulo;
 });
 
-domSlider.addEventListener("input", () => {
+domSlider.addEventListener("change", () => {
   year.val = sliderBase + (+domSlider.value);
 });
 
