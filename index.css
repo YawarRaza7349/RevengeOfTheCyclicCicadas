@@ -27,13 +27,7 @@ h1 {
   font-weight: bold;
 }
 
-#slider-controls {
-  display: flex;
-  flex-flow: row wrap;
-}
-
 label[for="slider"] {
-  flex-grow: 1;
   display: flex;
   flex-flow: row wrap;
 }
@@ -42,17 +36,13 @@ label[for="slider"] {
   flex-grow: 1;
 }
 
-#jump-controls {
+label[for="year-textbox"] {
   display: flex;
   flex-flow: row wrap;
 }
 
-label[for="year-textbox"] {
-  flex-grow: 1;
-}
-
 #year-textbox {
-  width: auto;
+  flex-flow: 1;
 }
 
 #year-textbox:valid {
@@ -62,6 +52,10 @@ label[for="year-textbox"] {
 #year-textbox:invalid {
   color: red;
   font-style: oblique;
+}
+
+#github {
+  float: right;
 }
 
 #data {
