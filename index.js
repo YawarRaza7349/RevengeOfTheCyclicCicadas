@@ -35,14 +35,23 @@ const initYear = 2024;
 const year = new Observable();
 
 year.subscribe((y) => {
-  domYear.innerText = y;
+  const yStr = y.toString();
+  domYear.innerText = yStr;
+  domYearTextbox.value = yStr;
 });
 
-domYearTextbox.addEventListener("change", () => {
+domYearTextbox.addEventListener("input", () => {
+  domYear.ariaBusy = "true";
+  domData.ariaBusy = "true";
   const parsed = Number.parseInt(domYearTextbox.value);
   if (!Number.isNaN(parsed)) {
     year.val = parsed;
   }
+});
+
+domYearTextbox.addEventListener("change", () => {
+  domYear.ariaBusy = "false";
+  domData.ariaBusy = "false";
 });
 
 function positiveModulo(n, d) {
@@ -53,25 +62,32 @@ let sliderBase = baselineYear;
 
 year.subscribe((y) => {
   const modulo = positiveModulo(y - baselineYear, fullCycle);
-  domSlider.value = modulo;
+  domSlider.value = modulo.toString();
   sliderBase = y - modulo;
 });
 
+domSlider.addEventListener("input", () => {
+  domYear.ariaBusy = "true";
+  domData.ariaBusy = "true";
+  year.val = sliderBase + Number(domSlider.value);
+});
+
 domSlider.addEventListener("change", () => {
-  year.val = sliderBase + (+domSlider.value);
+  domYear.ariaBusy = "false";
+  domData.ariaBusy = "false";
 });
 
 let interval;
 
 domAnimate.addEventListener("change", () => {
   if (domAnimate.checked) {
+    domData.ariaBusy = "true";
     interval = setInterval(() => {
       ++year.val;
     }, 500);
-    domData.ariaBusy = true;
   } else {
     clearInterval(interval);
-    domData.ariaBusy = false;
+    domData.ariaBusy = "false";
   }
 });
 
@@ -105,19 +121,20 @@ for (const path of document.querySelectorAll("#map path")) {
 }
 
 year.subscribe((y) => {
+  domData.ariaBusy = "true";
   for (const { state, cycle13, cycle17, textNode, dlItem, svg } of allData) {
     const deltaYear = y - dataStartYear;
     const total =
       cycle13[positiveModulo(deltaYear, 13)] +
       cycle17[positiveModulo(deltaYear, 17)];
-    textNode.nodeValue = total;
+    textNode.nodeValue = total.toString();
     dlItem.ariaHidden = total === 0 ? "true" : "false";
     const colorValue = Math.log1p(total) * 26;
-    svg.style.fill =
-      "rgb(255 " +
-      Math.trunc(255 - colorValue / 2) + " " +
-      Math.trunc(255 - colorValue) + ")";
+    const green = Math.trunc(255 - colorValue / 2);
+    const blue = Math.trunc(255 - colorValue);
+    svg.style.fill = `rgb(255 ${green} ${blue})`;
   }
+  domData.ariaBusy = "false";
 });
 
 year.val = initYear;
