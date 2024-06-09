@@ -15,23 +15,26 @@
         <span role="region" aria-live="polite" id="year">2024</span>
       </h1>
       <hr/>
-      <div id="slide-controls">
-        <label for="slider">
-          Slide to year
-          <input type="range" max="220" value="0" id="slider"/>
-        </label>
-        <label for="animate">
-          Animate
-          <input type="checkbox" id="animate"/>
-        </label>
-      </div>
-      <hr/>
-      <div id="jump-controls">
-        <label for="year-textbox">
-          Jump to year
-          <input type="number" required="" value="2024" id="year-textbox"/>
-        </label>
-        <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas">GitHub repo</a>
+      <div id="controls">
+        <div>
+          <label for="year-textbox">
+            Jump to year
+            <input type="number" required="" value="2024" id="year-textbox"/>
+          </label>
+        </div>
+        <div>
+          <label for="slider">
+            Slide to year
+            <input type="range" max="220" value="0" id="slider"/>
+          </label>
+        </div>
+        <div>
+          <label for="animate">
+            Animate
+            <input type="checkbox" id="animate"/>
+          </label>
+          <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas" id="github">GitHub repo</a>
+        </div>
       </div>
       <hr/>
       <dl id="data" role="region" aria-live="polite" aria-atomic="true" aria-busy="true">
