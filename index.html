@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <title>Revenge of the Cyclic Cicadas</title>
     <link rel="stylesheet" href="index.css"/>
     <script type="module" src="preprocessed.js"></script>
@@ -14,22 +15,23 @@
         <span role="region" aria-live="polite" id="year">2024</span>
       </h1>
       <hr/>
-      <div id="jump-controls">
-        <div>
-          <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas">GitHub repo</a>
-        </div>
-        <div>
-          <label for="year-textbox">Jump to year</label>
-          <input type="number" required="" id="year-textbox"/>
-          <button type="button" id="submit-year">Submit</button>
-        </div>
+      <div id="slide-controls">
+        <label for="slider">
+          Slide to year
+          <input type="range" max="220" value="0" id="slider"/>
+        </label>
+        <label for="animate">
+          Animate
+          <input type="checkbox" id="animate"/>
+        </label>
       </div>
       <hr/>
-      <div id="slide-controls">
-        <label for="slider">Slide to year</label>
-        <input type="range" max="220" value="0" id="slider"/>
-        <label for="animate">Animate</label>
-        <input type="checkbox" id="animate"/>
+      <div id="jump-controls">
+        <label for="year-textbox">
+          Jump to year
+          <input type="number" required="" value="2024" id="year-textbox"/>
+        </label>
+        <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas">GitHub repo</a>
       </div>
       <hr/>
       <dl id="data" role="region" aria-live="polite" aria-atomic="true">
