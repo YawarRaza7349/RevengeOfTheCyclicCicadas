@@ -27,6 +27,16 @@ h1 {
   font-weight: bold;
 }
 
+#controls {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+#controls > * {
+  height: 2rem;
+}
+
 label[for="slider"] {
   display: flex;
   flex-flow: row wrap;
@@ -42,7 +52,7 @@ label[for="year-textbox"] {
 }
 
 #year-textbox {
-  flex-flow: 1;
+  flex-grow: 1;
 }
 
 #year-textbox:valid {
