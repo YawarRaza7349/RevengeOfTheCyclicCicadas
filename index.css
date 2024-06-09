@@ -10,7 +10,7 @@ button, input {
 @media (min-width: 9in) {
   body {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
   }
 
   #sidebar {
@@ -34,23 +34,17 @@ h1 {
 }
 
 #jump-controls {
+  width: 100%;
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
 }
 
-#jump-controls > * {
-  flex: 1 1 auto;
-}
-
-#submit-year {
-  display: inline;
-  font-size: 1rem;
-  vertical-align: top;
-  align-items: center;
+label[for="year-textbox"] {
+  flex-grow: 1;
 }
 
 #year-textbox {
-  width: 5ex;
+  width: auto;
 }
 
 #year-textbox:valid {
@@ -65,18 +59,22 @@ h1 {
 #slider-controls {
   width: 100%;
   display: flex;
-  align-items: center;
+  flex-flow: row wrap;
+}
+
+label[for="slider"] {
+  flex-grow: 1;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 #slider {
   flex-grow: 1;
-  margin-left: 1ex;
-  margin-right: 1ex;
 }
 
 #data {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: center;
 }
 
