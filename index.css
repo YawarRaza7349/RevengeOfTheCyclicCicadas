@@ -27,14 +27,9 @@ h1 {
   font-weight: bold;
 }
 
-#controls {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}
-
 #controls > * {
   height: 5rem;
+  vertical-align: middle;
 }
 
 label[for="slider"] {
