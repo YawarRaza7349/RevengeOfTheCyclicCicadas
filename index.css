@@ -72,13 +72,13 @@ label[for="year-textbox"] {
   float: right;
 }
 
-#data {
+#data dl {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
 
-#data div {
+#data dl div {
   width: 15rex;
 }
 
@@ -99,6 +99,9 @@ label[for="year-textbox"] {
 
 #map {
   flex: 1;
+}
+
+#map svg {
   max-height: 100vh;
 }
 
