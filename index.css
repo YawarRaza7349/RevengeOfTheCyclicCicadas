@@ -8,7 +8,7 @@ button, input {
   font: inherit;
 }
 
-body {
+#layout {
   display: flex;
   flex-flow: row wrap;
 }
@@ -18,7 +18,7 @@ body {
   margin: 1rex;
 }
 
-h1 {
+#header {
   font-size: 2rem;
   text-align: center;
 }
@@ -72,28 +72,28 @@ label[for="year-textbox"] {
   float: right;
 }
 
-#data dl {
+#data-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
 }
 
-#data dl div {
+#data-list > div {
   width: 15rex;
 }
 
-#data dt {
+#data-list > div > dt {
   float: left;
   clear: left;
   font-weight: bold;
 }
 
-#data dt::after {
+#data-list > div > dt::after {
   content: ": ";
   white-space: pre;
 }
 
-#data dd {
+#data-list > div > dd {
   margin-left: 0;
 }
 
@@ -101,10 +101,10 @@ label[for="year-textbox"] {
   flex: 1;
 }
 
-#map svg {
+#map-svg {
   max-height: 100vh;
 }
 
-#map .state {
+#map-svg .state {
   fill: white;
 }
