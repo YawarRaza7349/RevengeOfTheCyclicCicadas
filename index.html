@@ -36,7 +36,14 @@
           <div>
             <label for="animate-textbox">
               Animation frames per minute
-              <input type="number" value="" id="animate-textbox"/>
+              <input type="number" min="0" step="any" value="" list="speeds" id="animate-textbox"/>
+              <datalist id="speeds">
+                <option value="0">Don't animate</option>
+                <option value="30">30 frames per minute</option>
+                <option value="60">60 frames per minute</option>
+                <option value="90">90 frames per minute</option>
+                <option value="120">120 frames per minute</option>
+              </datalist>
             </label>
           </div>
         </div>
