@@ -8,9 +8,9 @@
     <script type="module" src="preprocessed.js"></script>
     <script type="module" src="index.js"></script>
   </head>
-  <body>
+  <body id="layout">
     <div id="sidebar">
-      <h1>
+      <h1 id="header">
         Cicadas in U.S. states projected for year
         <span role="region" aria-live="polite" id="year">2024</span>
       </h1>
@@ -37,11 +37,16 @@
         </div>
       </div>
       <hr/>
-      <dl id="data" role="region" aria-live="polite" aria-atomic="true" aria-busy="true">
-      </dl>
+      <div id="data" role="region" aria-live="polite" aria-atomic="true" aria-busy="true">
+        <div id="state-count">
+          <span id="num-states">24</span> states with cicadas
+        </div>
+        <dl id="data-list">
+        </dl>
+      </div>
     </div>
     <div id="map">
-      <svg viewBox="0 0 959 593" aria-details="data">
+      <svg viewBox="0 0 959 593" id="map-svg" aria-details="data">
         <title>A map of the U.S. that visualizes the data</title>
       </svg>
     </div>
