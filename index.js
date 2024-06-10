@@ -38,7 +38,7 @@ const year = new Observable();
 
 year.subscribe((y) => {
   const yStr = y.toString();
-  domYear.textContents = yStr;
+  domYear.textContent = yStr;
   domYearTextbox.value = yStr;
 });
 
@@ -130,7 +130,7 @@ year.subscribe((y) => {
     const total =
       cycle13[positiveModulo(deltaYear, 13)] +
       cycle17[positiveModulo(deltaYear, 17)];
-    datumElem.textContents = total.toString();
+    datumElem.textContent = total.toString();
     if (total === 0) {
       dlItem.ariaHidden = "true";
     } else {
@@ -142,7 +142,7 @@ year.subscribe((y) => {
     const blue = Math.trunc(255 - colorValue);
     svg.style.fill = `rgb(255 ${green} ${blue})`;
   }
-  domNumStates.textContents = numStates.toString();
+  domNumStates.textContent = numStates.toString();
   domData.ariaBusy = "false";
 });
 
