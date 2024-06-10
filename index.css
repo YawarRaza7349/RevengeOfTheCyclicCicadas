@@ -14,26 +14,76 @@ button, input {
 }
 
 #sidebar {
-  max-width: 48rex;
-  margin: 1rex;
+  max-width: 25rem;
+  margin: 1rem;
   margin-top: 0;
 }
 
-#header {
+#github {
+  text-align: center;
+}
+
+#github::before {
+  content: "[";
+}
+
+#github::after {
+  content: "]";
+}
+
+h1 {
   font-size: 2rem;
   text-align: center;
 }
 
 #year {
   color: brown;
-  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 #controls {
-  height: 10rem;
+  height: 6rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
+}
+
+#control-row {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+label[for="year-textbox"] {
+  flex: auto;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#year-textbox {
+  flex: auto;
+  margin-left: 1rem;
+  min-width: 4em;
+}
+
+#year-textbox:valid {
+  color: green;
+}
+
+#year-textbox:invalid {
+  color: red;
+  font-style: oblique;
+}
+
+label[for="animate"] {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#animate {
+  transform: scale(1.5);
 }
 
 label[for="slider"] {
@@ -46,37 +96,9 @@ label[for="slider"] {
   margin-left: 1rem;
 }
 
-label[for="year-textbox"] {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-#year-textbox {
-  flex: auto;
-  margin-left: 1rem;
-}
-
-#year-textbox:valid {
-  color: green;
-}
-
-#year-textbox:invalid {
-  color: red;
-  font-style: oblique;
-}
-
-#animate {
-  transform: scale(1.5);
-}
-
-#github {
-  float: right;
-}
-
 #state-count {
   text-align: center;
   text-decoration: underline;
-  margin-top: 1rex;
 }
 
 #num-states {
@@ -90,7 +112,7 @@ label[for="year-textbox"] {
 }
 
 #data-list > div {
-  width: 15rex;
+  width: 8rem;
 }
 
 #data-list > div > dt {
