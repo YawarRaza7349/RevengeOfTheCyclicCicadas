@@ -19,6 +19,10 @@ button, input {
   margin-top: 0;
 }
 
+header {
+  width: 100%;
+}
+
 #github {
   text-align: center;
 }
@@ -42,22 +46,18 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
+  text-align: center;
+  color: gray;
 }
 
 #controls {
-  height: 6rem;
+  height: 9rem;
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-evenly;
 }
 
-#control-row {
-  display: flex;
-  flex-flow: row wrap;
-}
-
 label[for="year-textbox"] {
-  flex: auto;
   display: flex;
   flex-flow: row wrap;
 }
@@ -65,7 +65,7 @@ label[for="year-textbox"] {
 #year-textbox {
   flex: auto;
   margin-left: 1rem;
-  min-width: 4em;
+  min-width: 4rem;
 }
 
 #year-textbox:valid {
@@ -77,15 +77,6 @@ label[for="year-textbox"] {
   font-style: oblique;
 }
 
-label[for="animate"] {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-#animate {
-  transform: scale(1.5);
-}
-
 label[for="slider"] {
   display: flex;
   flex-flow: row wrap;
@@ -94,6 +85,26 @@ label[for="slider"] {
 #slider {
   flex: auto;
   margin-left: 1rem;
+}
+
+label[for="animate-textbox"] {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+#animate-textbox {
+  flex: auto;
+  margin-left: 1rem;
+  min-width: 3rem;
+}
+
+#animate-textbox:valid {
+  color: green;
+}
+
+#animate-textbox:invalid {
+  color: red;
+  font-style: oblique;
 }
 
 #state-count {
