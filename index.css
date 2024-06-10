@@ -25,6 +25,7 @@ header {
 
 #github {
   text-align: center;
+  width: 100%;
 }
 
 #github::before {
@@ -38,6 +39,7 @@ header {
 h1 {
   font-size: 2rem;
   text-align: center;
+  width: 100%;
 }
 
 #year {
@@ -46,8 +48,9 @@ h1 {
 
 h2 {
   font-size: 1.5rem;
-  text-align: center;
   color: gray;
+  text-align: center;
+  width: 100%;
 }
 
 #controls {
@@ -108,8 +111,9 @@ label[for="animate-textbox"] {
 }
 
 #state-count {
-  text-align: center;
   text-decoration: underline;
+  text-align: center;
+  width: 100%;
 }
 
 #num-states {
