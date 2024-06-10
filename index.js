@@ -116,7 +116,7 @@ for (const stateData of allData) {
   fragment.append(stateData.dlItem);
 }
 
-domData.append(fragment);
+domDataList.append(fragment);
 
 for (const path of document.querySelectorAll("#map path")) {
   path.style.stroke = "black";
