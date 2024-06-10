@@ -16,6 +16,7 @@ button, input {
 #sidebar {
   max-width: 48rex;
   margin: 1rex;
+  margin-top: 0;
 }
 
 #header {
@@ -75,6 +76,7 @@ label[for="year-textbox"] {
 #state-count {
   text-align: center;
   text-decoration: underline;
+  margin-top: 1rex;
 }
 
 #num-states {
