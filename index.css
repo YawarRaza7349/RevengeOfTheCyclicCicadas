@@ -72,6 +72,15 @@ label[for="year-textbox"] {
   float: right;
 }
 
+#state-count {
+  text-align: center;
+  text-decoration: underline;
+}
+
+#num-states {
+  font-weight: bold;
+}
+
 #data-list {
   display: flex;
   flex-flow: row wrap;
