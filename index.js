@@ -27,6 +27,7 @@ const domYearTextbox = document.querySelector("#year-textbox");
 const domSlider = document.querySelector("#slider");
 const domAnimate = document.querySelector("#animate");
 const domNumStatesTextNode = document.querySelector("#num-states").firstChild;
+const domData = document.querySelector("#data");
 const domDataList = document.querySelector("#data-list");
 const domMapSvg = document.querySelector("#map-svg");
 
