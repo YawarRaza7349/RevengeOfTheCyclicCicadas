@@ -22,12 +22,13 @@ class Observable {
 
 const { startYear: dataStartYear, data: allData } = preprocessed;
 
-const domYear = document.querySelector("#year");
+const domYearTextNode = document.querySelector("#year").firstChild;
 const domYearTextbox = document.querySelector("#year-textbox");
 const domSlider = document.querySelector("#slider");
 const domAnimate = document.querySelector("#animate");
-const domData = document.querySelector("#data");
-const domMapSvg = document.querySelector("#map svg");
+const domNumStatesTextNode = document.querySelector("#num-states").firstChild;
+const domDataList = document.querySelector("#data-list");
+const domMapSvg = document.querySelector("#map-svg");
 
 const fullCycle = 13 * 17;
 const baselineYear = 2024;
@@ -36,7 +37,7 @@ const year = new Observable();
 
 year.subscribe((y) => {
   const yStr = y.toString();
-  domYear.innerText = yStr;
+  domYearTextNode.nodeValue = yStr;
   domYearTextbox.value = yStr;
 });
 
@@ -122,18 +123,25 @@ for (const path of document.querySelectorAll("#map path")) {
 
 year.subscribe((y) => {
   domData.ariaBusy = "true";
+  const numStates = 0;
   for (const { state, cycle13, cycle17, textNode, dlItem, svg } of allData) {
     const deltaYear = y - dataStartYear;
     const total =
       cycle13[positiveModulo(deltaYear, 13)] +
       cycle17[positiveModulo(deltaYear, 17)];
     textNode.nodeValue = total.toString();
-    dlItem.ariaHidden = total === 0 ? "true" : "false";
+    if (total === 0) {
+      dlItem.ariaHidden = "true";
+    } else {
+      dlItem.ariaHidden = "false";
+      ++numStates;
+    }
     const colorValue = Math.log1p(total) * 26;
     const green = Math.trunc(255 - colorValue / 2);
     const blue = Math.trunc(255 - colorValue);
     svg.style.fill = `rgb(255 ${green} ${blue})`;
   }
+  domNumStatesTextNode.nodeValue = numStates.toString();
   domData.ariaBusy = "false";
 });
 
