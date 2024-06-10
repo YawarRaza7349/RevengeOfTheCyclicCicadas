@@ -10,40 +10,46 @@
   </head>
   <body id="layout">
     <div id="sidebar">
-      <h1 id="header">
+      <header>
+        <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas" id="github">GitHub repo</a>
+      </header>
+      <h1>
         Cicadas in U.S. states projected for year
         <span role="region" aria-live="polite" id="year">2024</span>
       </h1>
       <hr/>
-      <div id="controls">
-        <div>
-          <label for="year-textbox">
-            Jump to year
-            <input type="number" required="" value="2024" id="year-textbox"/>
-          </label>
+      <section>
+        <h2>Controls</h2>
+        <div id="controls">
+          <div id="control-row">
+            <label for="year-textbox">
+              Jump to year
+              <input type="number" required="" value="2024" id="year-textbox"/>
+            </label>
+            <label for="animate">
+              Animate
+              <input type="checkbox" id="animate"/>
+            </label>
+          </div>
+          <div>
+            <label for="slider">
+              Slide to year
+              <input type="range" max="220" value="0" id="slider"/>
+            </label>
+          </div>
         </div>
-        <div>
-          <label for="slider">
-            Slide to year
-            <input type="range" max="220" value="0" id="slider"/>
-          </label>
-        </div>
-        <div>
-          <label for="animate">
-            Animate
-            <input type="checkbox" id="animate"/>
-          </label>
-          <a href="https://github.com/YawarRaza7349/RevengeOfTheCyclicCicadas" id="github">GitHub repo</a>
-        </div>
-      </div>
+      </section>
       <hr/>
-      <div id="data" role="region" aria-live="polite" aria-atomic="true" aria-busy="true">
-        <div id="state-count">
-          <span id="num-states">24</span> states with cicadas
+      <section>
+        <h2>Data</h2>
+        <div id="data" role="region" aria-live="polite" aria-atomic="true" aria-busy="true">
+          <div id="state-count">
+            <span id="num-states">24</span> states with cicadas
+          </div>
+          <dl id="data-list">
+          </dl>
         </div>
-        <dl id="data-list">
-        </dl>
-      </div>
+      </section>
     </div>
     <div id="map">
       <svg viewBox="0 0 959 593" id="map-svg" aria-details="data">
