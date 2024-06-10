@@ -55,7 +55,7 @@ label[for="year-textbox"] {
 }
 
 #year-textbox {
-  font-size: 1.5rem;
+  font-size: 1rem;
   flex: auto;
   margin-left: 1rem;
 }
@@ -70,7 +70,7 @@ label[for="year-textbox"] {
 }
 
 #animate {
-  font-size: 3rem;
+  transform: scale(2);
 }
 
 #github {
