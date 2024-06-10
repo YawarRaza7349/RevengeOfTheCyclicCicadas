@@ -25,7 +25,7 @@ const { startYear: dataStartYear, data: allData } = preprocessed;
 const domYear = document.querySelector("#year");
 const domYearTextbox = document.querySelector("#year-textbox");
 const domSlider = document.querySelector("#slider");
-const domAnimate = document.querySelector("#animate");
+const domAnimateTextbox = document.querySelector("#animate-textbox");
 const domNumStates = document.querySelector("#num-states");
 const domData = document.querySelector("#data");
 const domDataList = document.querySelector("#data-list");
@@ -45,9 +45,9 @@ year.subscribe((y) => {
 domYearTextbox.addEventListener("input", () => {
   domYear.ariaBusy = "true";
   domData.ariaBusy = "true";
-  const parsed = Number.parseInt(domYearTextbox.value);
-  if (!Number.isNaN(parsed)) {
-    year.val = parsed;
+  const parsedYear = Number.parseInt(domYearTextbox.value);
+  if (!Number.isNaN(parsedYear)) {
+    year.val = parsedYear;
   }
 });
 
@@ -79,16 +79,27 @@ domSlider.addEventListener("change", () => {
   domData.ariaBusy = "false";
 });
 
-let interval;
+const msPerMin = 60 * 1000;
+let interval = null;
 
-domAnimate.addEventListener("change", () => {
-  if (domAnimate.checked) {
-    domData.ariaBusy = "true";
+domAnimateTextbox.addEventListener("input", () => {
+  domYear.ariaBusy = "true";
+  domData.ariaBusy = "true";
+  if (interval !== null) {
+    clearInterval(interval);
+    interval = null;
+  }
+  const parsedFpm = Number.parseInt(domAnimateTextbox.value);
+  if (!Number.isNaN(parsedFpm) && parsedFpm > 0) {
     interval = setInterval(() => {
       ++year.val;
-    }, 500);
-  } else {
-    clearInterval(interval);
+    }, msPerMin / parsedFpm);
+  }
+});
+
+domAnimateTextbox.addEventListener("change", () => {
+  domYear.ariaBusy = "false";
+  if (interval === null) {
     domData.ariaBusy = "false";
   }
 });
