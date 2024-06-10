@@ -70,7 +70,7 @@ label[for="year-textbox"] {
 }
 
 #animate {
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 #github {
