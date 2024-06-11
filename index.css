@@ -53,9 +53,6 @@ h2 {
 #controls {
   display: flex;
   flex-flow: column nowrap;
-}
-
-#controls > div {
   gap: 1rem;
 }
 
@@ -71,7 +68,6 @@ h2 {
 #year-textbox {
   flex: auto;
   margin-left: 1rem;
-  min-width: 4rem;
 }
 
 #year-textbox:valid {
@@ -91,7 +87,6 @@ h2 {
 #animate-textbox {
   flex: auto;
   margin-left: 1rem;
-  min-width: 3rem;
 }
 
 #animate-textbox:valid {
