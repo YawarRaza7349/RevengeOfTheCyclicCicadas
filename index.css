@@ -53,7 +53,6 @@ h2 {
 #controls {
   display: flex;
   flex-flow: column nowrap;
-  justify-content: space-evenly;
 }
 
 #controls > div {
@@ -66,7 +65,7 @@ h2 {
 }
 
 #controls > div > label > span {
-  display: block;
+  display: flow-root;
 }
 
 #year-textbox {
