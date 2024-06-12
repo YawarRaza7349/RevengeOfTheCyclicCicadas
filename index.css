@@ -50,17 +50,22 @@ h2 {
   text-align: center;
 }
 
+#controls > div {
+  margin-bottom: 1rem;
+}
+
 #controls > div > label {
   display: block;
-  text-align: center;
 }
 
 #controls > div > label > span {
   display: block;
+  text-align: center;
 }
 
 #year-textbox {
   display: block;
+  width: 100%;
 }
 
 #year-textbox:valid {
@@ -74,10 +79,12 @@ h2 {
 
 #slider {
   display: block;
+  width: 100%;
 }
 
 #animate-textbox {
   display: block;
+  width: 100%;
 }
 
 #animate-textbox:valid {
