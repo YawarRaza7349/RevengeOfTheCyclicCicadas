@@ -63,16 +63,17 @@ h2 {
   text-align: center;
 }
 
-#year-textbox {
+.textbox {
   display: block;
   width: 100%;
+  text-align: center;
 }
 
-#year-textbox:valid {
+.textbox:valid {
   color: green;
 }
 
-#year-textbox:invalid {
+.textbox:invalid {
   color: red;
   font-style: oblique;
 }
@@ -80,20 +81,6 @@ h2 {
 #slider {
   display: block;
   width: 100%;
-}
-
-#animate-textbox {
-  display: block;
-  width: 100%;
-}
-
-#animate-textbox:valid {
-  color: green;
-}
-
-#animate-textbox:invalid {
-  color: red;
-  font-style: oblique;
 }
 
 #state-count {
