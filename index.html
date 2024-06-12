@@ -24,7 +24,7 @@
           <div>
             <label for="year-textbox">
               <span>Jump to year</span>
-              <input type="number" required="" value="2024" id="year-textbox"/>
+              <input type="number" required="" value="2024" id="year-textbox" class="textbox"/>
             </label>
           </div>
           <div>
@@ -34,16 +34,29 @@
             </label>
           </div>
           <div>
-            <label for="animate-textbox">
-              <span>Animation frames per minute</span>
-              <input type="number" min="0" step="any" value="" id="animate-textbox"/>
-              <!--datalist id="speeds">
-                <option value="0">0</option>
-                <option value="30">30</option>
-                <option value="60">60</option>
-                <option value="90">90</option>
-                <option value="120">120</option>
-              </datalist-->
+            <label for="frequency-textbox">
+              <span>Animation frequency (frames per minute)</span>
+              <input type="number" min="0" step="any" value="" id="frequency-textbox" class="textbox"/>
+              <datalist id="speeds">
+                <option value="0">Don't animate</option>
+                <option value="30">30 frames per minute</option>
+                <option value="60">60 frames per minute</option>
+                <option value="90">90 frames per minute</option>
+                <option value="120">120 frames per minute</option>
+              </datalist>
+            </label>
+          </div>
+          <div>
+            <label for="period-textbox">
+              <span>Animation period (milliseconds between frames)</span>
+              <input type="number" min="0" step="any" value="" id="period-textbox" class="textbox"/>
+              <datalist id="speeds">
+                <option value="">Don't animate</option>
+                <option value="500">500ms between frames</option>
+                <option value="1000">1000ms between frames</option>
+                <option value="1500">1500ms between frames</option>
+                <option value="2000">2000ms between frames</option>
+              </datalist>
             </label>
           </div>
         </div>
