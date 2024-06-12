@@ -35,9 +35,9 @@
           </div>
           <div>
             <label for="frequency-textbox">
-              <span>Animation frequency (frames per minute)</span>
-              <input type="number" min="0" step="any" value="" id="frequency-textbox" class="textbox"/>
-              <datalist id="speeds">
+              <span>Animation frequency<br/>(frames per minute)</span>
+              <input type="number" min="0" step="any" value="0" list="frequencies" id="frequency-textbox" class="textbox"/>
+              <datalist id="frequencies">
                 <option value="0">Don't animate</option>
                 <option value="30">30 frames per minute</option>
                 <option value="60">60 frames per minute</option>
@@ -48,9 +48,9 @@
           </div>
           <div>
             <label for="period-textbox">
-              <span>Animation period (milliseconds between frames)</span>
-              <input type="number" min="0" step="any" value="" id="period-textbox" class="textbox"/>
-              <datalist id="speeds">
+              <span>Animation period<br/>(milliseconds between frames)</span>
+              <input type="number" min="0" step="any" value="" list="periods" id="period-textbox" class="textbox"/>
+              <datalist id="periods">
                 <option value="">Don't animate</option>
                 <option value="500">500ms between frames</option>
                 <option value="1000">1000ms between frames</option>
