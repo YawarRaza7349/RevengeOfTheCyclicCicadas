@@ -50,24 +50,17 @@ h2 {
   text-align: center;
 }
 
-#controls {
-  display: flex;
-  flex-flow: column nowrap;
-  gap: 1rem;
-}
-
 #controls > div > label {
-  display: flex;
-  flex-flow: row wrap;
+  display: block;
+  text-align: center;
 }
 
 #controls > div > label > span {
-  max-width: 12rem;
+  display: block;
 }
 
 #year-textbox {
-  flex: auto;
-  margin-left: 1rem;
+  display: block;
 }
 
 #year-textbox:valid {
@@ -80,13 +73,11 @@ h2 {
 }
 
 #slider {
-  flex: auto;
-  margin-left: 1rem;
+  display: block;
 }
 
 #animate-textbox {
-  flex: auto;
-  margin-left: 1rem;
+  display: block;
 }
 
 #animate-textbox:valid {
