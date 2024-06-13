@@ -25,7 +25,8 @@ const { startYear: dataStartYear, data: allData } = preprocessed;
 const domYear = document.querySelector("#year");
 const domYearTextbox = document.querySelector("#year-textbox");
 const domSlider = document.querySelector("#slider");
-const domAnimateTextbox = document.querySelector("#animate-textbox");
+const domFrequencyTextbox = document.querySelector("#frequency-textbox");
+const domPeriodTextbox = document.querySelector("#period-textbox");
 const domNumStates = document.querySelector("#num-states");
 const domData = document.querySelector("#data");
 const domDataList = document.querySelector("#data-list");
@@ -79,30 +80,68 @@ domSlider.addEventListener("change", () => {
   domData.ariaBusy = "false";
 });
 
-const msPerMin = 60 * 1000;
+function frequencyToPeriod(freq) {
+  const msPerMin = 60 * 1000;
+  return msPerMin / freq;
+}
+
+const periodToFrequency = frequencyToPeriod;
+
 let interval = null;
 
-domAnimateTextbox.addEventListener("input", () => {
+function setupAnimationInterval(period) {
   domYear.ariaBusy = "true";
   domData.ariaBusy = "true";
   if (interval !== null) {
     clearInterval(interval);
     interval = null;
   }
-  const parsedFpm = Number.parseInt(domAnimateTextbox.value);
-  if (!Number.isNaN(parsedFpm) && parsedFpm > 0) {
+  if (period !== null) {
     interval = setInterval(() => {
       ++year.val;
-    }, msPerMin / parsedFpm);
+    }, period);
   }
+}
+
+domFrequencyTextbox.addEventListener("input", () => {
+  const parsedFrequency = Number.parseFloat(domFrequencyTextbox.value);
+  const period =
+    !Number.isNaN(parsedFrequency) && parsedFrequency > 0
+      ? frequencyToPeriod(parsedFrequency)
+      : null
+  ;
+  setupAnimationInterval(period);
+  domPeriodTextbox.value =
+    period !== null
+      ? period.toFixed(2);
+      : ""
+  ;
 });
 
-domAnimateTextbox.addEventListener("change", () => {
+domPeriodTextbox.addEventListener("input", () => {
+  const parsedPeriod = Number.parseFloat(domPeriodTextbox.value);
+  const period =
+    !Number.isNaN(parsedPeriod) && parsedPeriod > 0
+      ? parsedPeriod
+      : null
+  ;
+  setupAnimationInterval(period);
+  domFrequencyTextbox.value =
+    period !== null
+      ? periodToFrequency(period).toFixed(2);
+      : ""
+  ;
+});
+
+function animationChangeHandler() {
   domYear.ariaBusy = "false";
   if (interval === null) {
     domData.ariaBusy = "false";
   }
-});
+}
+
+domFrequencyTextbox.addEventListener("change", animationChangeHandler);
+domPeriodTextbox.addEventListener("change", animationChangeHandler);
 
 const svgUrl =
   "https://raw.githubusercontent.com/" +
