@@ -111,11 +111,11 @@ domFrequencyTextbox.addEventListener("input", () => {
       : null
   ;
   setupAnimationInterval(period);
-  domPeriodTextbox.value =
+  domPeriodTextbox.value = (
     period !== null
-      ? period.toFixed(2);
+      ? period.toFixed(2)
       : ""
-  ;
+  );
 });
 
 domPeriodTextbox.addEventListener("input", () => {
@@ -126,11 +126,11 @@ domPeriodTextbox.addEventListener("input", () => {
       : null
   ;
   setupAnimationInterval(period);
-  domFrequencyTextbox.value =
+  domFrequencyTextbox.value = (
     period !== null
-      ? periodToFrequency(period).toFixed(2);
+      ? periodToFrequency(period).toFixed(2)
       : ""
-  ;
+  );
 });
 
 function animationChangeHandler() {
