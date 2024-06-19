@@ -8,13 +8,32 @@ button, input {
   font: inherit;
 }
 
-#layout {
-  display: flex;
-  flex-flow: row wrap;
+@media (min-width: 45rem) {
+  #layout {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+
+  #sidebar {
+    width: 25rem;
+  }
+  
+  #map {
+    flex: 1;
+  }
+
+  #map-svg {
+    max-height: 100vh;
+  }
+}
+
+@media not (min-width: 45rem) {
+  #map-svg {
+    width: 100vw;
+  }
 }
 
 #sidebar {
-  max-width: 25rem;
   margin: 1rem;
 }
 
@@ -115,14 +134,6 @@ h2 {
 
 #data-list > div > dd {
   margin-left: 0;
-}
-
-#map {
-  flex: 1;
-}
-
-#map-svg {
-  max-height: 100vh;
 }
 
 #map-svg .state {
