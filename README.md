@@ -4,4 +4,4 @@ The original version does a bunch of data processing at the start of every run o
 
 I have attempted to make the app accessible to screen readers, though I have not been able to test it as I don't have a computer right now. I have also made the layout of the page responsive across varying screen sizes, with both a "mobile" layout and a "desktop" layout. The implementation is simple and straightforward, yet modern, using technologies like CSS Flexbox and ES6 language features.
 
-For those looking at the commit logs, I do know how to use `git add` to add multiple files to a single commit, but I don't have have a computer, so I programmed this on my smartphone and used the GitHub web UI to make my commits, which doesn't support multiple files per commit.
+For those looking at the commit logs, I do know how to use `git add` to add multiple files to a single commit, but I don't have a computer, so I programmed this on my smartphone and used the GitHub web UI to make my commits, which doesn't support multiple files per commit.
